@@ -78,3 +78,171 @@ ReactDOM.render(element, document.getElementById("root")) Yukarida görüldügü
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(navbar)
+
+
+**ReactDOM.render(temporaryName(), document.getElementById("root"))   --> Fonksiyonda render edilir.
+
+** Yukardaki fonksiyon component seklinde asagidaki gibi de yazilabilir.
+
+
+function TemporaryName() {
+    return (
+        <div>
+            <img src="./react-logo.png" width="40px" />
+            <h1>Fun facts about React</h1>
+            <ul>
+                <li>Was first released in 2013</li>
+                <li>Was originally created by Jordan Walke</li>
+                <li>Has well over 100K stars on GitHub</li>
+                <li>Is maintained by Facebook</li>
+                <li>Powers thousands of enterprise apps, including mobile apps</li>
+            </ul>
+        </div>
+    )
+}
+
+ReactDOM.render(<TemporaryName />, document.getElementById("root"))
+
+**import React from "react"
+import ReactDOM from "react-dom"  
+
+**
+
+function Header() {
+    return (
+        <header>
+            <nav>
+                <img src="./react-logo.png" width="40px" />
+            </nav>
+        </header>
+    )
+}
+
+function Page() {
+    return (
+        <div>
+            <Header />         ---> child component
+            <h1>Reasons I'm excited to learn React</h1>
+            <ol>
+                <li>It's a popular library, so I'll be 
+                able to fit in with the cool kids!</li>
+                <li>I'm more likely to get a job as a developer
+                if I know React</li>
+            </ol>
+            <footer>
+                <small>© 2021 Ziroll development. All rights reserved.</small>
+            </footer>
+        </div>
+    )
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"))
+
+**
+function Header() {
+    return (
+        <header>
+            <nav>
+                <img src="./react-logo.png" width="40px" />
+            </nav>
+        </header>
+    )
+}
+
+function Footer() {
+     return (
+       <footer>
+                <small>© 2021 Ziroll development. All rights reserved.</small>
+            </footer>  
+     )
+     
+}
+
+function MainContent() {
+    return (
+         <div>
+        <h1>Reasons I'm excited to learn React</h1>
+            <ol>
+                <li>It's a popular library, so I'll be 
+                able to fit in with the cool kids!</li>
+                <li>I'm more likely to get a job as a developer
+                if I know React</li>
+            </ol>
+             </div>
+    )
+}
+
+function Page() {
+    return (
+         <div>     --> componentlerde div icerisinde yazilmalidir
+           <Header />
+            <MainContent />
+            <Footer />
+       
+           </div>
+    )
+       
+          
+    
+}
+
+ReactDOM.render(<Page />, document.getElementById("root"))
+
+
+
+** Styling with Classes
+
+function Header() {
+    return (
+        <header>
+            <nav class="nav">
+                <img src="./react-logo.png" width="40px" />               --> Not: const ul = document.createElement("ul")
+                                                                                           ul.className = ""  JS class adi atama.
+
+                <ul className="nav-items">                                 --> verilen class css de sekillendirilir.
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+
+                </ul>
+            </nav>
+        </header>
+    )
+}
+
+** .nav {                                                        //nav styling 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+}
+
+.nav-items > li {
+    padding: 10px;n
+}
+
+** Organize Component
+import React from "react"
+
+export default function Header() {                   --> Yeni bir header.js dosyasi acilip . import ve export yapilir                
+    return (                                         --> index.js de import    import Header from "./Header"
+        <header>
+            <nav>
+                <img src="./react-logo.png" width="40px" />
+                <nav className="nav">
+                <img src="./react-logo.png" class="nav-logo" />
+                <ul className="nav-items">
+                    <li>Pricing</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
+            </nav>
+        </header>
+    )
+}
+ 
