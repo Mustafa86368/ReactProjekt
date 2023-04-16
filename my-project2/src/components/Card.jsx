@@ -3,7 +3,8 @@ import React from 'react'
 const Card = () => {
   return (
     <div className='card'>
-        <img src="" alt="" />
+        <img src="./src/assets/kahve.png" alt="" />
+        
     </div>
   )
 }
