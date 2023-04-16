@@ -246,3 +246,6 @@ export default function Header() {                   --> Yeni bir header.js dosy
     )
 }
  
+
+ **Probs
+ 
