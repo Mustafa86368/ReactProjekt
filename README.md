@@ -249,4 +249,114 @@ export default function Header() {                   --> Yeni bir header.js dosy
 
  **Probs
 
--Reusable Component 
+--What do props help us accomplish?
+>Make a component more reusable.
+
+
+--How do you pass a prop into a component?
+<MyAwesomeHeader title="???" />
+
+
+function App() {
+    const firstName = "Joe"
+    const lastName = "Schmoe"
+    /**
+     * Challenge: finish off the h1 below so it says
+     * "Hello Joe Schmoe!"
+     */
+    return (
+               <h1>Hello {firstName} {lastName}!</h1>                      -->variable {}icinde yazilir
+           )
+}   
+
+function App() {
+    const date = new Date()
+    //const hours = date.getHours() % 12
+    
+    return (
+        <h1>It is currently about {date.getHours() % 12} o'clock!</h1>
+    )
+}
+
+function App() {
+    const date = new Date()
+    const hours = date.getHours()
+    let timeOfDay
+    
+    if (hours < 12) {
+        timeOfDay = "morning"
+    } else if (hours >= 12 && hours < 17) {
+        timeOfDay = "afternoon"
+    } else {
+        timeOfDay = "night"
+    }
+    
+    return (
+        <h1>Good {timeOfDay}!</h1> ---> retunde kullanilir probs
+    )
+}
+
+------
+##Bu örnekte componentimizdeki fonksiyonun bir parametresi var. App.js de tanimlanan objenin özelliklerine atif yapar.
+
+
+--Contact.js--
+
+import React from "react"
+
+export default function Contact(props) {
+   
+    return (
+        <div className="contact-card">
+            <img src={props.img}/>
+            <h3>{props.name}</h3>
+            <div className="info-group">
+                <img src="./images/phone-icon.png" />
+                <p>{props.phone}</p>
+            </div>
+            <div className="info-group">
+                <img src="./images/mail-icon.png" />
+                <p>{props.email}</p>
+            </div>
+        </div>
+    )
+}
+
+
+--App.js--
+
+import React from "react"
+import Contact from "./Contact"
+
+function App() {
+    return (
+        <div className="contacts">
+            <Contact 
+                img="./images/mr-whiskerson.png" 
+                name="Mr. Whiskerson"
+                phone="(212) 555-1234"
+                email="mr.whiskaz@catnap.meow"
+            />
+            <Contact 
+                img="./images/fluffykins.png"
+                name="Fluffykins"
+                phone="(212) 555-2345"
+                email="fluff@me.com"
+            />
+            <Contact 
+                img="./images/felix.png"
+                name="Felix"
+                phone="(212) 555-4567"
+                email="thecat@hotmail.com"
+            />
+            <Contact 
+                img="./images/pumpkin.png"
+                name="Pumpkin"
+                phone="(0800) CAT KING"
+                email="pumpkin@scrimba.com"
+            />
+        </div>
+    )
+}
+
+export default App
