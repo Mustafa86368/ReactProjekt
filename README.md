@@ -8,7 +8,7 @@ $ npm install
 $ npm start
 ````
 
-*ReactDOM.render(tag, document.getElementById("))--> tag i verilen id li yere koyar.
+*ReactDOM.render(tag, document.getElementById("root"))-->   tag i verilen id li yere koyar. Burasi önemli. Burasi bizim html icindeki divimiz
 
 *React is composole: kücük parcalar bir bütün icinde kullanilir. Daha flexible ve korunakli kodlar.
 
@@ -24,7 +24,8 @@ ReactDOM.render(
     <div>
         <Navbar />
         <MainContent />
-    </div>, document.getElementById("root")
+    </div>,
+     document.getElementById("root")
 )
 
 *React is declarative / imperative
@@ -322,6 +323,33 @@ export default function Contact(props) {
     )
 }
 
+const person = {                                         ---> Objectimiz burda
+    img: "./images/mr-whiskerson.png",
+    name: "Mr. Whiskerson",
+    phone: "(800) 555-1234",
+    email: "mr.whiskaz@catnap.meow"
+}
+
+
+const {img, name} = person       --> Burasi önemli, buradan hareketle asagidaki gibi de yapabiliriz.
+console.log(name)
+
+export default function Contact({img, name, phone, email}) {       --> parametreler {} icinde verildi. Kod blogu  icinde de ayni sekilde {} icinde yazildi.
+    return (
+        <div className="contact-card">
+            <img src={img}/>
+            <h3>{name}</h3>
+            <div className="info-group">
+                <img src="./images/phone-icon.png" />
+                <p>{phone}</p>
+            </div>
+            <div className="info-group">
+                <img src="./images/mail-icon.png" />
+                <p>{email}</p>
+            </div>
+        </div>
+    )
+}
 
 --App.js--
 
@@ -360,3 +388,76 @@ function App() {
 }
 
 export default App
+
+
+
+**Cok önemli
+Bütün react yapilarinda main.js oder index.js de olmasi gereken asagidaki yapilandirma cok önemli
+--index oder main--
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./App"
+
+
+ReactDOM.render(<App />, document.getElementById("root"))
+
+daha sonra app.js de siteyi yapariz
+
+-- app ---
+import React from "react"
+import Joke from "./Joke"
+
+export default function App() {
+    return (
+        <div>
+            
+        </div>
+    )
+}
+
+
+----önemli bir Not daha---
+
+import React from "react"
+
+export default function Joke(props) {
+    return (
+        <div>
+            {props.setup && <h3>Setup: {props.setup}</h3>}               --> bütün kartlar setup yoksa bu sekilde condition verilir.
+//    <h3 style={{display: props.setup ? "block" : "none"}}>Setup: {props.setup}</h3>  --> Bu da ikinci yöntem.                                               
+            <p>Punchline: {props.punchline}</p>                      --> Asagida hepsinde var ama ilkinde yok. yazmasaydik Setup: seklinde bos bir ifade olurdu.
+            <hr />
+        </div>
+    )
+}
+
+
+export default function App() {
+    return (
+        <div>
+            <Joke 
+                punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
+            />
+            <Joke 
+                setup="I got my daughter a fridge for her birthday." 
+                punchline="I can't wait to see her face light up when she opens it." 
+            />
+            <Joke 
+                setup="How did the hacker escape the police?" 
+                punchline="He just ransomware!" 
+            />
+            <Joke 
+                setup="Why don't pirates travel on mountain roads?" 
+                punchline="Scurvy." 
+            />
+            <Joke 
+                setup="Why do bees stay in the hive in the winter?" 
+                punchline="Swarm." 
+            />
+            <Joke 
+                setup="What's the best thing about Switzerland?" 
+                punchline="I don't know, but the flag is a big plus!" 
+            />
+        </div>
+    )
+}
