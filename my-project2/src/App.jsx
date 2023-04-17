@@ -16,6 +16,8 @@ function App() {
       <Navbar />
     <Hero />
     <Card />
+    <Card />
+    <Card />
       <Main />
       
     </div>
