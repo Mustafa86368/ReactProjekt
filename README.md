@@ -319,7 +319,7 @@ export default function Contact(props) {
                 <img src="./images/mail-icon.png" />
                 <p>{props.email}</p>
             </div>
-        </div>
+        </div>"
     )
 }
 

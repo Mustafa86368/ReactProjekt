@@ -15,7 +15,14 @@ function App() {
  
       <Navbar />
     <Hero />
-    <Card />
+    <Card 
+    img ="./src/assets/kahve.png"
+    rating = "5.0"
+    reviewCount= "6"
+     country = "USA"
+     title = "Life Lessons with Katie Zaferes"
+    price = "136"
+    />
     <Card />
     <Card />
       <Main />
