@@ -7,13 +7,13 @@ const Card = (props) => {
         <div className='card--stats'>
             <img src="./src/assets/star.png" alt="" className='card--star'/>
             <span>{props.rating}</span>
-            <span className='gray'>  {props.rewievCount} .</span>
+            <span className='gray'>  ({props.reviewCount}).</span>
             <span className='gray'>{props.country}</span>
 
         </div>
         <div>
         <p>{props.title}</p>
-            <p><span className='bold'>From {props.price}</span> / person</p>
+            <p><span className='bold'>From ${props.price}</span> / person</p>
         </div>
     </div>
   )

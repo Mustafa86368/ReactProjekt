@@ -18,13 +18,25 @@ function App() {
     <Card 
     img ="./src/assets/kahve.png"
     rating = "5.0"
-    reviewCount= "6"
+    reviewCount= {6}
      country = "USA"
      title = "Life Lessons with Katie Zaferes"
     price = "136"
     />
-    <Card />
-    <Card />
+    <Card 
+     img ="./src/assets/elma.png"
+    rating = "5.0"
+    reviewCount= "6"
+     country = "USA"
+     title = "Life Lessons with Katie Zaferes"
+    price = "136"/>
+    <Card 
+     img ="./src/assets/portakal.png"
+    rating = "5.0"
+    reviewCount= "6"
+     country = "USA"
+     title = "Life Lessons with Katie Zaferes"
+    price = "136"/>
       <Main />
       
     </div>
