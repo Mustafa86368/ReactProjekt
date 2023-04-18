@@ -6,15 +6,16 @@ import Card from './components/Card'
 import data from './components/data'
 import './App.css'
 
+console.log(data)
 function App() {
-  const cardElements = data.map(element => {
-    return <Card img = {data.coverImg} 
-    rating = {data.stats.rating}
-    reviewCount = {data.stats.reviewCount}
-    location = {data.location}
-    title = {data.title}
-    price = {data.price} 
-    open Spots = {data.openSpots}
+  const cards = data.map(item=> {
+    return <Card img = {item.coverImg} 
+    rating = {item.stats.rating}
+    reviewCount = {item.stats.reviewCount}
+    location = {item.location}
+    title = {item.title}
+    price = {item.price} 
+    open Spots = {item.openSpots}
    
 
     />
@@ -26,7 +27,7 @@ function App() {
  
       <Navbar />
     <Hero />
-   {cardElements}
+   {cards}
 
 
       <Main />
