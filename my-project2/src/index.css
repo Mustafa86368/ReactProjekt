@@ -18,7 +18,7 @@ body {
   display: flex;
 
   justify-content: center;
-  min-width: 320px;
+  min-width: 420px;
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
 
@@ -60,17 +60,33 @@ section {
   margin-top: 0;
 }
 
+.card--list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+
 .card {
   width: 175px;
   font-size: 12px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .card--image {
   width: 100%;
   border-radius: 9px;
+  margin-bottom: 9px;
 }
 
-.card--status {
+.card--title {
+overflow: hidden;
+text-transform: ellipsis;
+}
+.card--stats {
   display: flex;
   align-items: center;
 
@@ -87,3 +103,7 @@ section {
 .gray {
   color: #918E9B;
 }
+
+.card-price{
+margin-top: auto;
+} 

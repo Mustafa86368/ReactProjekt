@@ -27,7 +27,10 @@ function App() {
  
       <Navbar />
     <Hero />
-   {cards}
+    <section className='card--list'>
+    {cards}
+    </section>
+ 
 
 
       <Main />
