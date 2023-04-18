@@ -16,7 +16,7 @@ function App() {
       <Navbar />
     <Hero />
     <Card 
-    img ="./src/assets/kahve.png"
+    img ="./public/images/kahve.png"
     rating = "5.0"
     reviewCount= {6}
      country = "USA"
@@ -24,14 +24,14 @@ function App() {
     price = "136"
     />
     <Card 
-     img ="./src/assets/elma.png"
+     img ="./public/images/elma.png"
     rating = "5.0"
     reviewCount= "6"
      country = "USA"
      title = "Life Lessons with Katie Zaferes"
     price = "136"/>
     <Card 
-     img ="./src/assets/portakal.png"
+     img ="./public/images/portakal.png"
     rating = "5.0"
     reviewCount= "6"
      country = "USA"
