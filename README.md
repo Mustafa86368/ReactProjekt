@@ -474,7 +474,7 @@ export default function App() {
     
     return (
         <div>
-            {jokesElement}
+            {jokesElements}
         </div>
     )
 }
@@ -547,3 +547,29 @@ additional changes whenever the data changes.
 for(let i = 0; i < 5; i++) {
     
 }
+
+
+
+
+    <Card 
+    img ="./public/images/kahve.png"
+    rating = "5.0"
+    reviewCount= {6}
+     location = "USA"
+     title = "Life Lessons with Katie Zaferes"
+    price = "136"
+    />
+    <Card 
+     img ="./public/images/elma.png"
+    rating = "5.0"
+    reviewCount= "6"
+     location = "USA"
+     title = "Life Lessons with Katie Zaferes"
+    price = "136"/>
+    <Card 
+     img ="./public/images/portakal.png"
+    rating = "5.0"
+    reviewCount= "6"
+     location = "USA"
+     title = "Life Lessons with Katie Zaferes"
+    price = "136"/>

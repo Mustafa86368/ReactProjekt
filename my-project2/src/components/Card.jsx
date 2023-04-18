@@ -8,7 +8,7 @@ const Card = (props) => {
             <img src="./public/images/star.png" alt="" className='card--star'/>
             <span>{props.rating}</span>
             <span className='gray'>  ({props.reviewCount}).</span>
-            <span className='gray'>{props.country}</span>
+            <span className='gray'>{props.location}</span>
 
         </div>
         <div>
