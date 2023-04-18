@@ -423,9 +423,9 @@ import React from "react"
 export default function Joke(props) {
     return (
         <div>
-            {props.setup && <h3>Setup: {props.setup}</h3>}               --> bütün kartlar setup yoksa bu sekilde condition verilir.
-//    <h3 style={{display: props.setup ? "block" : "none"}}>Setup: {props.setup}</h3>  --> Bu da ikinci yöntem.                                               
-            <p>Punchline: {props.punchline}</p>                      --> Asagida hepsinde var ama ilkinde yok. yazmasaydik Setup: seklinde bos bir ifade olurdu.
+            {props.setup && <h3>Setup: {props.setup}</h3>}                               --> bütün kartlar setup yoksa bu sekilde condition verilir.
+        // <h3 style={{display: props.setup ? "block" : "none"}}>Setup: {props.setup}</h3>  --> Bu da ikinci yöntem.                                               
+            <p>Punchline: {props.punchline}</p>                            --> Asagida hepsinde var ama ilkinde yok, yazmasaydik Setup: seklinde bos bir ifade olurdu.
             <hr />
         </div>
     )
@@ -465,8 +465,25 @@ export default function App() {
     )
 }
 
+import jokesData from "./jokesData"
 
-** Cok kullanisli map() metodu ile birka uygulama. methodun icerisndeki parametre alan fonksiyonlarin kullanimina dikkat et.
+export default function App() {
+   const jokeElements = jokesData.map(joke => {                                    -->datalar baska filedan alinir(JokesData) 
+    return <Joke setup= {joke.setup} punchline = {joke.punchline}>
+   })
+    
+    return (
+        <div>
+            {jokesElement}
+        </div>
+    )
+}
+  
+
+--> Yukardaki hard kodu daha temiz ve sade olarak  map() methodu ile asagidaki gibi yapabiliriz.
+
+
+** Cok kullanisli map() metodu ile birkac uygulama. Methodun icerisndeki parametre alan fonksiyonlarin kullanimina dikkat et.
 /*
 Challenge 1:
 Given an array of numbers, return an array of each number, squared
@@ -510,3 +527,23 @@ const pokemon1 = pokemon.map(function(e){
 })
 console.log(pokemon1)
 
+1. What does the `.map()` array method do?
+Returns a new array. Whatever gets returned from the callback
+function provided is placed at the same index in the new array.
+Usually we take the items from the original array and modify them
+in some way.
+
+
+2. What do we usually use `.map()` for in React?
+Convert an array of raw data into an array of JSX elements
+that can be displayed on the page.
+
+
+3. Why is using `.map()` better than just creating the components
+   manually by typing them out?
+It makes our code more "self-sustaining" - not requiring
+additional changes whenever the data changes.
+
+for(let i = 0; i < 5; i++) {
+    
+}
