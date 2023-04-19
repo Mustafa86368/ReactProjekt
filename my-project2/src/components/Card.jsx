@@ -3,7 +3,7 @@ import React from 'react'
 const Card = (props) => {
   return (
     <div className='card'>
-      <div className="card--badge">Sold Out</div>
+      {props.openSpots === 0 && <div className="card--badge">Sold Out</div>}
         <img src={props.img} alt="" className='card--image'/>
         <div className='card--stats'>
             <img src="./public/images/star.png" alt="" className='card--star'/>
