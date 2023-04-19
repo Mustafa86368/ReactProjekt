@@ -15,7 +15,7 @@ function App() {
     location = {item.location}
     title = {item.title}
     price = {item.price} 
-    open Spots = {item.openSpots}
+    openSpots = {item.openSpots}
    
 
     />
@@ -25,7 +25,7 @@ function App() {
     <div className="App">
      
  
-      <Navbar />
+    <Navbar />
     <Hero />
     <section className='card--list'>
     {cards}
