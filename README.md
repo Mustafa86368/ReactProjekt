@@ -573,3 +573,119 @@ for(let i = 0; i < 5; i++) {
      location = "USA"
      title = "Life Lessons with Katie Zaferes"
     price = "136"/>
+
+app.jsx de yukardaki gibi görülen card componentleri map() method ile sadelestirelim.
+
+--data.js den bilgiler import edilir
+
+export default function App() {
+    const cards = data.map(item => {
+        return (
+            <Card
+                key={item.id}
+                img={item.coverImg}
+                rating={item.stats.rating}
+                reviewCount={item.stats.reviewCount}
+                location={item.location}
+                title={item.title}
+                price={item.price}
+                openSpots={item.openSpots}
+            />
+        )
+    })        
+    
+            // <Hero />
+    return (
+        <div>
+            <Navbar />
+            <section className="cards-list">
+                {cards}
+            </section>
+        </div>
+    )
+}
+
+
+--card componentlerde propslar girilir.
+
+
+const Card = (props) => {
+  let badgeText
+  if (props.openSpots === 0) {
+    badgeText = "SOLD OUT"
+  } else if (props.location === "Online") {
+    badgeText = "ONLINE"
+  }
+  return (
+    <div className='card'>
+      {badgeText && <div className="card--badge">{badgeText}</div>}
+        <img src={props.img} alt="" className='card--image'/>
+        <div className='card--stats'>
+            <img src="./public/images/star.png" alt="" className='card--star'/>
+            <span>{props.rating}</span>
+            <span className='gray'>  ({props.reviewCount}).</span>
+            <span className='gray'>{props.location}</span>
+
+        </div>
+        <div>
+        <p>{props.title}</p>
+            <p><span className='bold'>From ${props.price}</span> / person</p>
+        </div>
+    </div>
+  )
+}
+
+simdi biraz daha app() biraz daha sade hale getirelim.
+
+
+                                        
+export default function App() {
+    const cards = data.map(item => {
+        return (
+            <Card
+                key={item.id}      --> datadan alina itemlar. cardda karsiligi var. ama cardda yazarken data'daki ayni key adi ile yazilmalidir
+                item={item}
+            />
+        )
+    })        
+    
+            // <Hero />
+    return (
+        <div>
+            <Navbar />
+            <section className="cards-list">
+                {cards}
+            </section>
+        </div>
+    )
+}
+
+card
+
+export default function Card(props) {
+    let badgeText
+    if (props.item.openSpots === 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.item.location === "Online") {
+        badgeText = "ONLINE"
+    }
+    
+    /*
+    Challenge: Fix our component! 😱
+    */
+    
+    return (
+        <div className="card">
+            {badgeText && <div className="card--badge">{badgeText}</div>}
+            <img src={`../images/${props.item.coverImg}`} className="card--image" />
+            <div className="card--stats">
+                <img src="../images/star.png" className="card--star" />
+                <span>{props.item.stats.rating}</span>
+                <span className="gray">({props.item.stats.reviewCount}) • </span>
+                <span className="gray">{props.item.location}</span>
+            </div>
+            <p className="card--title">{props.item.title}</p>
+            <p className="card--price"><span className="bold">From ${props.item.price}</span> / person</p>
+        </div>
+    )
+}
