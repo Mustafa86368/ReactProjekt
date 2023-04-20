@@ -5,7 +5,7 @@ export const Header = () => {
   <header>
     <img src="./public/images/troll-face.png" alt="" className='header--icon' />
     <h3 className='head--logo_text'>Meme Genarator</h3>
-    <h4 className='header--title'>React Course - Project 3</h4>
+    <h4 className='header--project'>React Course - Project 3</h4>
   </header>
   )
 }
