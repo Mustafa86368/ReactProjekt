@@ -14,11 +14,11 @@ $ npm start
 
 <h2>ilk component </h2>
 
-/*function MainContent() {
+function MainContent() {
     return (
-        <h1> </h1>
+       // <h1> </h1>
     )
-} */
+} 
 
 ReactDOM.render(
     <div>
