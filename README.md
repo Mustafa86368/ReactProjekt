@@ -12,7 +12,7 @@ $ npm start
 
 *React is composole: kücük parcalar bir bütün icinde kullanilir. Daha flexible ve korunakli kodlar.
 
-*ilk component
+<h2>ilk component </h2>
 
 function MainContent() {
     return (
