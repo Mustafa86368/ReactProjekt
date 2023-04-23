@@ -41,11 +41,10 @@ ReactDOM.render(<h1 className="header">This is an imperative way to program</h1>
 <h2>what is JSX </h2>
 
 
-<!--
+<!---
 const element = <h1 className="header">This is JSX</h1>
-console.log(element)
--->
 
+console.log(element)
 
 {
 type: "h1", 
@@ -56,7 +55,7 @@ children: "This is JSX"},
 _owner: null, 
 store: {}
   }
- 
+  -->
 
 // JSX
 ReactDOM.render(element, document.getElementById("root")) Yukarida görüldügü gibi variable store eder object olarak ve onu componentte kullanabiliriz. JSX ile sadece single parent element yürütülür.
