@@ -729,3 +729,20 @@ export default function Card(props) {
         </div>
     )
 }
+
+**Event  listener 
+Raectda eventler CamelCase yazilir. ve functionlarin yazimi da farklidir
+
+
+export default function App() {
+    
+    return (
+        function handleClick() {
+        console.log("I was clicked!")
+    }
+        <div className="container">
+            <img src="https://picsum.photos/640/360" />
+            <button onClick={handleClick}>Click me</button>   -->  () kullanilmaz
+        </div>
+    )
+}
